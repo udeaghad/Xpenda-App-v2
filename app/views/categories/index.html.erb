@@ -10,7 +10,7 @@
 </button>
 
 <%@categories.each do |category| %>
- <%# <% if can? :read, category %> %>
+ <% if can? :read, category %>
   <li class="w-[100] border-2 rounded-md border-blue-300 mb-2 p-3 bg-gray-50">
    <div>
    <div class="flex justify-between items-center gap-10">
@@ -32,7 +32,7 @@
      <div>
     </div>
   </li>
-<%# <% end %> %>
+<% end %>
 
 <% end %>
 </ul>
