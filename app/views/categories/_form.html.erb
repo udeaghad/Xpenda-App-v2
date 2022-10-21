@@ -1,0 +1,31 @@
+<section  class='flex flex-col justify-center items-center'>
+
+<div class="w-full max-w-xs">
+<%= form_for @category do |f|%>
+<div class="form-card">
+  <div class="field mb-4">
+    <%= f.label :name, class: "block text-gray-700 text-m font-bold mb-2" %>
+    <%= f.text_field :name, class:"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
+
+  <div class="field mb-4">
+    <%= f.label :icon, class: "block text-gray-700 text-m font-bold mb-2" %>
+    <%= f.select :icon, [
+      ["Family", "family-icon.png"],["Bills", "bills-icon.png" ],["Groceries", "groceries-icon.png"],
+      ["Shopping", "shopping-icon.png"],["Health", "health-icon.png"], ["Transport", "transport-icon.png"],
+      ["Restaurant", "restaurant-icon.png"],["Education", "education-icon.png"], ["Holiday", "holiday-icon.png"],
+      ["Investment", "investment-icon.png"], ["Others", "others-icon.png"]
+      ], class:"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
+
+  <div class="flex items-center justify-between mb-4">
+    <%= f.submit class:"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+  
+  <button>
+    <%= link_to 'Cancel', :back, class:"bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+  </button>
+  </div>
+</div>
+<% end %>
+</div>
+</section>
