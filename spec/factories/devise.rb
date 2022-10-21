@@ -21,7 +21,6 @@ FactoryBot.define do
     name { 'Pizza' }
     amount { 10 }
     user_id { 1 }
-    category_id { 1 }
   end
 
   factory :category_expenditure do
