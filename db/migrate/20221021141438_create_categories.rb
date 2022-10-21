@@ -3,7 +3,7 @@ class CreateCategories < ActiveRecord::Migration[7.0]
     create_table :categories do |t|
       t.string :name
       t.string :icon
-      t.decimal :total
+      t.decimal :total, default: 0.0
 
       t.timestamps
     end

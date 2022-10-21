@@ -10,12 +10,13 @@ class ExpendituresController < ApplicationController
   end
 
   def create
-    @expenditure = Expenditure.new(expenditure_params)
-    @category_expenditures = CategoryExpenditure.new(category_expenditures_params) 
+    @expenditure = Expenditure.new(expenditure_params)     
     @expenditure.user_id = current_user.id
-    @expenditure.update_categories_total
-    @category_expenditures.expenditure_id = @expenditure.id
-    if @expenditure.save && @category_expenditures.save
+    # @expenditure.update_categories_total 
+    @category_id = category_expenditures_params[:category_id]
+    if @expenditure.save
+      @category_expenditures = CategoryExpenditure.create(expenditure_id: @expenditure.id, category_id: @category_id)
+      @category_expenditures.update_categories_total
       redirect_to category_category_expenditures_path(@category_expenditures.category_id)
     else
       render :new
@@ -36,6 +37,6 @@ class ExpendituresController < ApplicationController
   end
 
   def category_expenditures_params
-    params.require(:category_expenditures).permit(:category_id)
+    params.require(:expenditure).permit(:category_id)
   end
 end

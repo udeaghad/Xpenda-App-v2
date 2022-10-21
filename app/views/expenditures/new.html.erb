@@ -1,0 +1,35 @@
+<section  class='flex flex-col justify-center items-center'>
+<h1 class='text-center text-gray-900 font-bold'>Add an Expenses</h1>
+
+<div class="w-full max-w-xs">
+<%= form_with model: @expenditure, url: expenditures_path, method: :post, local: true do |f|%>
+<div class="form-card">
+  <div>
+    <%= f.label :name, class: "block text-gray-700 text-m font-bold mb-2" %>
+    <%= f.text_field :name, class:"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div><br>
+
+  <div class="field mb-4">
+    <%= f.label :amount, class: "block text-gray-700 text-m font-bold mb-2" %>
+    <%= f.number_field :amount, step: 0.01, class:"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div><br>
+
+  <div class="field mb-4">
+    <%= f.label :category, class: "block text-gray-700 text-m font-bold mb-2" %>
+    <%= f.collection_select :category_id, 
+    Category.all.order(:name), :id, :name, class:"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
+
+  <div class="flex items-center justify-between mb-4">
+    <%= f.submit 'Add Expense', class:"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+
+    <button>
+    <%= link_to 'Cancel', :back, class:"bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+  </button>
+
+  </div>
+
+  
+  </div>
+
+<% end %>
