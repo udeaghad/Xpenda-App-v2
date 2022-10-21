@@ -14,5 +14,5 @@ Rails.application.routes.draw do
     resources :category_expenditures, only: [:index]
   end
 
-  resources :expenditures, only: [:index, :new, :create, :destroy] 
+  resources :expenditures, only: [:new, :create, :destroy] 
 end
