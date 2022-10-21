@@ -19,7 +19,7 @@ I created an application that allows the user to:
 - Tailwind
 
 ## Live Demo (if available)
-Click **[here](https://aqueous-peak-97003.herokuapp.com/)** for live demo
+Click **[here](https://mighty-brushlands-87793.herokuapp.com/)** for live demo
 
 ## Getting Started
 
