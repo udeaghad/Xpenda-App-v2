@@ -35,7 +35,7 @@
     <td scope="row" class="px-6 py-4 whitespace-nowrap text-lg font-medium text-gray-900"><%= expense.name%></td>
     <td scope="row" class="px-6 py-4 whitespace-nowrap text-lg font-medium text-gray-900">$<%= expense.amount%></td>
     <td scope="row" class="px-6 py-4 whitespace-nowrap text-lg font-medium text-gray-900">
-       <%= button_to 'Delete', expenditure_path(expense.expenditure_id), 
+       <%= button_to 'Delete', expenditure_path(expense.id), 
        method: :delete, data: { turbo_confirm: "Are you sure you want to delete #{expense.name}?"},
        class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
     </td>

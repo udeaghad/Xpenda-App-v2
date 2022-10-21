@@ -25,9 +25,11 @@ class ExpendituresController < ApplicationController
 
   def destroy
     @expenditure = Expenditure.find(params[:id])
-    @expenditure.destroy
-    @expenditure.update_categories_total_after_destroy
-    redirect_to category_category_expenditures_path(@expenditure.category_id)
+    @category = @expenditure.category_expenditures.first
+    @category.update_categories_total_after_destroy
+    
+    @expenditure.destroy    
+    redirect_to category_category_expenditures_path(@category.category_id)
   end
 
   private
