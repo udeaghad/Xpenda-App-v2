@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "CategoryExpenditures", type: :request do
+RSpec.describe 'CategoryExpenditures', type: :request do
   before :each do
     sign_in create(:user)
     category = create(:category)
@@ -23,4 +23,3 @@ RSpec.describe "CategoryExpenditures", type: :request do
     expect(response.body).to include('Total')
   end
 end
-

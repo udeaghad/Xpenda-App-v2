@@ -6,8 +6,6 @@ class User < ApplicationRecord
 
   has_many :expenditures, dependent: :destroy, foreign_key: 'user_id'
   has_many :categories, dependent: :destroy, foreign_key: 'user_id'
-  
 
   validates :name, presence: true, length: { maximum: 100 }
-
 end

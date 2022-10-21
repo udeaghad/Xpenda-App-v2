@@ -47,7 +47,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
 
     if @category.destroy
-      flash[:success] = 'Object was successfully deleted.'
+      flash[:success] = "#{@category.name} category was successfully deleted."
     else
       flash[:error] = 'Something went wrong'
     end
@@ -59,5 +59,4 @@ class CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit(:name, :icon)
   end
-
 end

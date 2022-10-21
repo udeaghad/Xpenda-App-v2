@@ -12,5 +12,4 @@ class CategoryExpenditure < ApplicationRecord
   def update_categories_total_after_destroy
     category.update(total: category.total - expenditure.amount) if expenditure.amount.present?
   end
-
 end

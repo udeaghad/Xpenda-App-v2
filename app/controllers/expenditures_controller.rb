@@ -10,9 +10,9 @@ class ExpendituresController < ApplicationController
   end
 
   def create
-    @expenditure = Expenditure.new(expenditure_params)     
+    @expenditure = Expenditure.new(expenditure_params)
     @expenditure.user_id = current_user.id
-    # @expenditure.update_categories_total 
+    # @expenditure.update_categories_total
     @category_id = category_expenditures_params[:category_id]
     if @expenditure.save
       @category_expenditures = CategoryExpenditure.create(expenditure_id: @expenditure.id, category_id: @category_id)
@@ -27,8 +27,8 @@ class ExpendituresController < ApplicationController
     @expenditure = Expenditure.find(params[:id])
     @category = @expenditure.category_expenditures.first
     @category.update_categories_total_after_destroy
-    
-    @expenditure.destroy    
+
+    @expenditure.destroy
     redirect_to category_category_expenditures_path(@category.category_id)
   end
 

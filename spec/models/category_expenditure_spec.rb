@@ -14,5 +14,4 @@ RSpec.describe CategoryExpenditure, type: :model do
     @category_expenditure.expenditure_id = nil
     expect(@category_expenditure).to_not be_valid
   end
-
 end
