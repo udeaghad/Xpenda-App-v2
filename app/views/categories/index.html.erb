@@ -1,0 +1,39 @@
+<div class="flex justify-center items-center flex-col">
+<h1 class="text-5xl">Transaction Categories</h1>
+<span>Total Amount Spent: $<%= @total%> </span>
+</div>
+
+<ul class="m-5">
+
+<button class="mb-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+<%= link_to "Add Category", new_category_path %>
+</button>
+
+<%@categories.each do |category| %>
+ <%# <% if can? :read, category %> %>
+  <li class="w-[100] border-2 rounded-md border-blue-300 mb-2 p-3 bg-gray-50">
+   <div>
+   <div class="flex justify-between items-center gap-10">
+   <div class="w-24">
+     <a href="/categories/<%= category.id %>/expenditures">
+     <%= image_tag category.icon, alt: 'icon' %>
+    </a>
+
+  </div>
+     <p class="text-4xl"><%= category.name.capitalize %></p>
+     <span>Total: $<%=category.total%></span>
+    </div>
+
+    <div class="flex justify-between items-center">
+     <%= link_to "Edit", edit_category_path(category.id), class:"text-slate-500 hover:text-blue-600"%> |
+     <%= button_to "Remove", category_path(category.id), method: :delete, data: { turbo_confirm: "Are you sure you want to delete #{category.name}"}, class:"text-slate-500 hover:text-blue-600"%> |
+     <%= link_to "View Details", category_category_expenditures(category.id), class:"text-slate-500 hover:text-blue-600"  %> |
+     <%# <%= link_to "Add Expense", new_category_expenditure_path(category.id), class:"text-slate-500 hover:text-blue-600" %> %>
+     <div>
+    </div>
+  </li>
+<%# <% end %> %>
+
+<% end %>
+</ul>
+

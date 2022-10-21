@@ -1,26 +1,33 @@
-<h2>Log in</h2>
-
+<section  class='flex flex-col justify-center items-center'>
+<h2 class='text-gray-900 font-bold'>Log in</h2>
+<div class="w-full max-w-xs">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="field mb-4">
+    <%= f.label :email, class: "block text-gray-700 text-m font-bold mb-2" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="field mb-4">
+    <%= f.label :password, class: "block text-gray-700 text-m font-bold mb-2" %>
+    <%= f.password_field :password, autocomplete: "current-password", class:"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
+    <div class="field mb-4">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="actions flex items-center justify-between mb-4">
+    <%= f.submit "Log in", class:"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+  
+  <button>
+    <%= link_to "Cancel", root_path, class:"bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+    </button>
   </div>
 <% end %>
+</div>
 
 <%= render "devise/shared/links" %>
+</section>

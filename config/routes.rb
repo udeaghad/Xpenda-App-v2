@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root "home#index"
+  root "homes#index"
 
   resources :categories, only: [:index, :new, :create, :edit, :update, :destroy] do
     resources :category_expenditures, only: [:index]
