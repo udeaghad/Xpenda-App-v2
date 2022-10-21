@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   def index
     @categories = Category.all
     @total = Category.where('user_id = ?', current_user.id).sum(:total)
