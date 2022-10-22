@@ -144,7 +144,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 7rem;
+  /* height: 7rem; */
   background-color: #5fb523;
   position: absolute;
   bottom: 0;
