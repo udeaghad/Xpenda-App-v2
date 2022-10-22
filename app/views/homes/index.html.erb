@@ -1,0 +1,31 @@
+<section class="home-page">
+<h1 class="welcome-greeting"> Xpenda</h1>
+
+  <div class="home-logo">  
+   <%= image_tag "home-page-pix.png", alt: "logo", class:'front-logo' %>
+   <span class="note">track your expenses...manage your budget</span>
+  </div>
+  
+  <div class='login-link'>
+  <% if user_signed_in? %>
+  <button class="sign-in-btn">
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "sign-in-label" %>
+  </button>
+  <%else%>
+  <button class="sign-in-btn">
+  <%= link_to  'Sign in', new_user_session_path, class: "sign-in-label" %>
+  </button>
+  <button class="sign-up-btn">
+  <%= link_to  'Sign up', new_user_registration_path %>
+  </button>
+  <%end%>
+  </div>
+  <div class="scan">
+   <div class=scan-line>
+    <span class="scan-text">Scan</span>
+    </div>
+  </div>
+
+ </section> 
+
+  

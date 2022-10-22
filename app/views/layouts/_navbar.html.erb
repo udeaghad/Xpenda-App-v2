@@ -1,0 +1,28 @@
+<nav class="nav_bar">
+<div class="nav_bar_container">
+  <div class="logo-container">
+  <a href="/">
+    <%= image_tag "xpenda-logo.png", alt: "logo", class:'logo' %>
+   </a> 
+    <span class="app-name">Xpenda</span>
+    
+</div>
+
+<div class="category-name">   
+   <%= link_to "Category", categories_path, class: "nav-link" %>
+</div>
+
+<div class="login-link">
+   <% if user_signed_in? %>
+    <span class="username"><%= current_user.name%></span>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+    <% else %>
+    <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
+    <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+    <% end %>
+</div>
+  
+
+</div>
+
+</nav>
