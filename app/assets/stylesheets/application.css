@@ -93,6 +93,7 @@ body {
   font-size: 2rem;
   font-style: italic;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
 }
 
 .login-link {
