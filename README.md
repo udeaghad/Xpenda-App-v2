@@ -56,8 +56,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
+- The colors, typography and the layout of this app was done according to the design guidelines of Gregoire Vella on Behance
+- 
 - etc
 
 ## 📝 License
