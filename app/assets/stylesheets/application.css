@@ -67,9 +67,10 @@ body {
 }
 
 .home-page {
-  width: 100%;
-  height: 100vh;
+  width: 100%;  
   background-color: rgb(245 245 245);
+  min-height: 100vh;
+  position: relative;
 }
 
 .welcome-greeting {
@@ -145,6 +146,10 @@ body {
   flex-direction: column;
   height: 7rem;
   background-color: #5fb523;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 6.5rem;
 }
 
 .scan-line {
