@@ -83,6 +83,4 @@ test:
 #
 production:
   <<: *default
-  database: Xpenda_app_v2_production
-  username: Xpenda_app_v2
-  password: <%= ENV["XPENDA_APP_V2_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
