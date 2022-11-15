@@ -88,8 +88,6 @@ GEM
       xpath (~> 3.2)
     childprocess (4.1.0)
     concurrent-ruby (1.1.10)
-    cors (1.0.1)
-      multi_json
     crass (1.0.6)
     debug (1.6.2)
       irb (>= 1.3.6)
@@ -133,7 +131,6 @@ GEM
     mini_mime (1.1.2)
     minitest (5.16.3)
     msgpack (1.6.0)
-    multi_json (1.15.0)
     net-imap (0.3.1)
       net-protocol
     net-pop (0.1.2)
@@ -155,6 +152,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.4)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-test (2.0.2)
       rack (>= 1.3)
     rails (7.0.4)
@@ -266,7 +265,6 @@ DEPENDENCIES
   bullet
   cancancan
   capybara
-  cors
   debug
   devise
   factory_bot_rails
@@ -275,6 +273,7 @@ DEPENDENCIES
   jbuilder
   pg (~> 1.1)
   puma (~> 5.0)
+  rack-cors
   rails (~> 7.0.4)
   rails-controller-testing
   rspec-rails (~> 6.0.0)
